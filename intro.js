@@ -11,4 +11,4 @@ app.get('/', (req, res) => {
   res.send('Advanced JS Course Server!')
 }); 
 
-console.log("Ok we are now ready to go!")
+console.log("Ok we are now ready to go!");
