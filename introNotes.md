@@ -1,2 +1,7 @@
 # Advanced JS Course Intro
-- Testing Git works right 
+
+- Intro!
+
+- JS Objects Review
+    - Recap 
+        - Properties that dont exist evaluate to undefined!
