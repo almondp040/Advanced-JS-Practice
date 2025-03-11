@@ -106,4 +106,24 @@ const testing = new Triangle()
 // testing.getTriangleName(testing.name)
 
 
+class Spaceship {
+    constructor(shipType, fuel, destination) {
+        this.shipType = shipType; 
+        this.fuel = fuel; 
+        this.destination = destination; 
+    }
 
+    getShipType (){
+
+    }
+
+    getRemainingFuel (){
+
+    }
+
+    getDestination(){
+
+        
+
+    }
+}
