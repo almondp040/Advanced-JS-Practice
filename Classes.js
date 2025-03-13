@@ -1,21 +1,34 @@
 //Triangle contains the functions we need to use for triangles
 
 class Triangle {
+
+    constructor(sideA, sideB){
+        this.sideA = sideA
+        this.sideB = sideB
+    }
     getArea() {
         
-        return (this.a * this.b) / 2; 
+        return (this.sideA * this.sideB) / 2; 
     }
 
-    getHypotenuse(a, b) {
+    getHypotenuse() {
 
-        return Math.sqrt(this.a ** 2 + this.b ** 2); 
+        return Math.sqrt(this.sideA ** 2 + this.sideB ** 2); 
 
     }
 
     getTriangleName (name){
         console.log(`Hello ${name} you can now measure triangles!!`)
     }
+
+    sayHi(){
+        console.log(`The Triangle with side A of ${this.sideA} and ${this.sideB} has an area of ${this.getArea()}`)
+    }
 }
+
+const newTriangle = new Triangle(5, 4); 
+
+newTriangle.sayHi()
 
 class Circle {
 
@@ -74,15 +87,15 @@ class SearchEngine {
     }
 }
 
-const search = new SearchEngine("Almond", "PASS", "https://swapi.dev/api/planets" )
+// const search = new SearchEngine("Almond", "PASS", "https://swapi.dev/api/planets" )
 
 
 
 
-console.log(search.url)
+// console.log(search.url)
 
-search.getResults(search.url)
-search.processResults()
+// search.getResults(search.url)
+// search.processResults()
 
 
 const myCircle = new Circle()
@@ -114,16 +127,25 @@ class Spaceship {
     }
 
     getShipType (){
-
+            console.log(`Welcome Aboard ${this.shipType}, please enjoy your stay!!`)
     }
 
     getRemainingFuel (){
-
+        console.log(`We have ${this.fuel} remaining!`)
     }
 
     getDestination(){
 
-        
+      console.log(`Here's your destination: ${this.destination}`)  
 
     }
 }
+
+const shipInfo = new Spaceship(); 
+shipInfo.destination = "Saturn"
+shipInfo.fuel = "FULL"
+shipInfo.shipType = "MK. 5000 SPEEDMASTER"
+
+shipInfo.getShipType()
+shipInfo.getRemainingFuel()
+shipInfo.getDestination()
