@@ -38,5 +38,7 @@ class BankAccount {
 
 const bankUser = new BankAccount(); 
 
-bankUser.deposit(1000); 
+bankUser.deposit(10000); 
 bankUser.widthdrawl(300);
+
+

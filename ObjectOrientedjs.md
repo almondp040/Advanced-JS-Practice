@@ -43,3 +43,26 @@
             - They take arguments / return data like any other function
             - A method can call another method! But it will require you to use this.methodName() see Class Triangle for an example!
             - Only needed if we need to use a method inside of another method thats in the same class
+
+        - Inheritance and Supers
+            - Instead of having a large amount of duplicate code we can inherit the methods of the original class and add onto it via the new class. 
+            - This allows subclass functions to use functionality from the parent class
+
+        - The Super Keyword
+            - Refers to the issues one might face when you have multiple conflicting constructors 
+            - For us to use a class that extends another class with different constructors we must use super!
+                - See ColorTriangle as an example!
+            - Acts as a reference for the class we're extending from
+            - JS would know what the super class is
+
+        - Static Properties
+            - Modern JS also offers "static properties", where individual pieces of data are on the class, not instances
+            - Pieces of data that are permanent to the class
+                - See the CatWithStaticProp as an example 
+                -Use the class itself to access the static properties!
+            - Also known as class properties
+
+        - Static Methods
+            - JS gives us "static methods", where the method is called on a Class, not an object - therefore it cannot have access to individual object attributes
+            - Almost every other OO language more properly calls this a "class method" not a static method - since it does have access to this class itself (that's what the "this" is in a JS "static method")
+            - More consistent OO languages, like C++/JAVA/Python, also have true static methods, where they don't have access to the class itself

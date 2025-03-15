@@ -2,8 +2,6 @@
 let myTriangle = {
     sideA: 5, 
     sideB: 10
-    
-
 
 }
 

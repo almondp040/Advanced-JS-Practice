@@ -1,34 +1,4 @@
-//Triangle contains the functions we need to use for triangles
 
-class Triangle {
-
-    constructor(sideA, sideB){
-        this.sideA = sideA
-        this.sideB = sideB
-    }
-    getArea() {
-        
-        return (this.sideA * this.sideB) / 2; 
-    }
-
-    getHypotenuse() {
-
-        return Math.sqrt(this.sideA ** 2 + this.sideB ** 2); 
-
-    }
-
-    getTriangleName (name){
-        console.log(`Hello ${name} you can now measure triangles!!`)
-    }
-
-    sayHi(){
-        console.log(`The Triangle with side A of ${this.sideA} and ${this.sideB} has an area of ${this.getArea()}`)
-    }
-}
-
-const newTriangle = new Triangle(5, 4); 
-
-newTriangle.sayHi()
 
 class Circle {
 
@@ -82,7 +52,7 @@ class SearchEngine {
             });
             
         } catch (error) {
-            
+            console.log(error); 
         }
     }
 }
