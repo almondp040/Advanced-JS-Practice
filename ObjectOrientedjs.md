@@ -66,3 +66,11 @@
             - JS gives us "static methods", where the method is called on a Class, not an object - therefore it cannot have access to individual object attributes
             - Almost every other OO language more properly calls this a "class method" not a static method - since it does have access to this class itself (that's what the "this" is in a JS "static method")
             - More consistent OO languages, like C++/JAVA/Python, also have true static methods, where they don't have access to the class itself
+
+        - Use Cases for Static Methods
+            - Common use cases is to use a class to group together related functionality
+            - Essentially we can have static methods for use else where in our code
+                -See myMath Object as an example of this. 
+            - Grouping together common functions in a class via static methods
+            - Another common usecase is to create factory functions which are functions that use our classes. 
+                - See the CatStats method to view this

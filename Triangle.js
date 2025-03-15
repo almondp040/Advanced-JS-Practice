@@ -107,3 +107,18 @@ class CatWithStaticProp {
 
 const cat = new CatWithStaticProp("Almond", 6, "European Swift"); 
 cat.catStats()
+
+class myMath {
+    static add (a, b){
+        console.log(a +b)
+    }
+
+    static multiply (a, b){
+        console.log(a * b)
+    }
+}
+
+myMath.add(10, 4); 
+
+
+
