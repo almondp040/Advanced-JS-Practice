@@ -1,4 +1,5 @@
 //Create a static class called ArrayUtils with static methods called Average and Max. Data will be an array of numbers
+//Gotta finish this later, for now focus on course material
 class ArrayUtils {
 
     static data = [2,4,6,8,10]; 
