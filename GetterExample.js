@@ -61,31 +61,31 @@
 
 // const newCircle2 = new CircleSetter(8, "Purple"); 
 
-class User {
-    constructor(firstName, lastName) {
-        this.firstName = firstName
-        this.lastName = lastName
-    }
+// class User {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName
+//         this.lastName = lastName
+//     }
 
-    get fullName(){
-        const nameCombined = `${this.firstName} ${this.lastName}`
-        console.log(nameCombined)
-    }
+//     get fullName(){
+//         const nameCombined = `${this.firstName} ${this.lastName}`
+//         console.log(nameCombined)
+//     }
 
-    set fullName(newName){
+//     set fullName(newName){
 
-        const [first, last] = newName.split(" ")
-        this.firstName = first
-        this.lastName = last
+//         const [first, last] = newName.split(" ")
+//         this.firstName = first
+//         this.lastName = last
 
-        console.log(first, last)
-    }
+//         console.log(first, last)
+//     }
 
 
-}
+// }
 
-const user = new User("Almond", "Paschal")
-user.fullName
-user.fullName = "George Smith"
+// const user = new User("Almond", "Paschal")
+// user.fullName
+// user.fullName = "George Smith"
 
 
