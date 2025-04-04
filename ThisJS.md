@@ -42,6 +42,8 @@
     - Works exactly the same way as the call method, the ONLY difference is Apply uses Arrays ONLY
 
 
-    
+- The Bind Method
+    - You can "perma-bind" a function to a context
+    - Its like putting a setting to a variable 
 
     
