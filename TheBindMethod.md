@@ -19,3 +19,8 @@
     - If we use a arrow function this will remain the this from the class
         - See ArrowFuncAndThis as an example!
         - Arrow functions do NOT change the value of this! 
+
+- This Takeaways
+    - This is a reserved keyword whose value is determined only at the point of function execution
+    - If you don't call a function yourself (callback), you need to ensure JS knows what the "this" context should be. 
+    - This depends on how we run our functions, but the use of arrow function will never reset "this"
