@@ -44,3 +44,37 @@
         - Every function has a property on it called prototype
         - The prototype object has a property called constructor which points back to the function
         - When the "new" keyword is used to invoke a function, a link between the object created from new and the prototype object is established
+
+- The Prototype Chain
+    - Essentially we can link prototypes to other objects in JS
+    - Kinda how call(), bind(), apply() works
+    - JS checks the original object first, then goes up the chain to parent, then grandparent
+        - We can see the chain itself via child.__proto__.__proto__ - this will show us the greet method in grandparent
+    - Classes make this WAY easier
+
+
+- Classes, Prototypes, Inheritance
+    - Methods are automatically added to a new object using a class
+        - For example a new Dog that will use Bark and Sleep methods
+        
+    - Inheritance
+        - Using classes that extend the parent class allows us to use the Bark and Sleep methods from Dog
+        - We can set up a chain of inheritance by using extends that will reference the previous class methods 
+        - Same deal as the .__proto__ chain on the front end
+        - Extends sets up a new link in the prototype chain which allows JS to look for relevant methods
+        - At the end of the chain we will see NULL or UNDEFINED
+        - Classes allows us to manage the prototype stuff all under the hood
+        
+    - Prototypes are objects with shared functionality
+
+
+- .__proto__ vs Prototype
+    - What is the difference between Prototype and .__proto__
+        - Prototype allows us to add onto the chain to add methods to the object
+            - Exists on a function which allows us to point to an object through .__proto__
+            - Prototype allows us to define, proto points this functionality to the cooresponding object
+        - .__proto__ works under the hood in JS, but we do not add things to this ourselves
+
+
+- Useful Prototype Methods
+    - Object.create() allows us to create an object that has the specified prototype or that has a null prototype
