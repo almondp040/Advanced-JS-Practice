@@ -80,3 +80,28 @@
             - Kinda like having a .then() inside of the function or a pause button
             - The awaits do NOT run until we have a value from the previous function
         - WE MUST USE ASYNC WITH AWAIT!!!
+
+
+- Error Handling with Async Functions
+    - We will use Try / Catch for Async functions
+    - This will allow us to catch any errors that come from our async function. 
+    - Works the same way as .then() .catch()
+
+- Async Patterns: Parallell Async Operations
+    - Comparing .then/.catch and async/await
+        - Under the hood, they do the same thing
+        - async / await is the modern improvement 
+            - code can be written more naturally 
+        - There are a few cases where its easy to deal with promises directly 
+         
+- Async Patterns: In Sequence
+    - When we need to make AJAX calls one at a time, in order
+        - In the .then/.catch way we will need to return the next step
+        - In the Async / Await way we will need to put all of our calls in the same Async Function
+            - See Async for an example of .then/.catch and async
+
+- Async Patterns: Promise All
+    - Promise.all accepts an array of promises and returns a new promise
+    - New Promise will resolve when every promise in array resolves, and will be rejected if any promise in the array is rejected
+    - Basically like combining all of our calls into 1 promise
+        - See Async.js for an example! 
