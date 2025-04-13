@@ -78,3 +78,13 @@
 
 - Useful Prototype Methods
     - Object.create() allows us to create an object that has the specified prototype or that has a null prototype
+        - Will create a new Object that uses a argument that will act as the prototype we are looking to create
+
+    - Object.getPrototypeOf(objectName) allows us to see what the prototype of this object is
+     - Will give us the prototype of the object and is how we can use .__proto__ for ourselves 
+
+    -     // Object.setPrototypeOf allows us to set prototypes 
+        - Object.setPrototypeOf(timmy, {isHuman: false}); 
+
+    -   //Object.isPrototypeOf will return true or false if our object is using a specific prototype: 
+        - person.isPrototypeOf(ling); //Will return true since Ling is using the person object 
