@@ -56,3 +56,27 @@
     - We would simply return the next portion of the promise - See pokemon example!
     - We use RETURN so that we can chain the next fetch request!! Allows us to chain requests together!
     - Works ONLY if we return a promise from our callback 
+
+- Error Handling with Promises
+    - Error handling can be used with .catch(), and we only will need 1 .catch()
+    - Any promise with an error will give us the error message
+
+- Benefits of Promises Over Callbacks 
+    - Easier to write good functions
+    - With promises, .then() method can just return value for next without having to itself know what comes next!
+
+
+- Async / Await
+    - Async / Await are language keywords for working with promises
+    - Async 
+        - You can declare ANY function in JS as async by putting Async in front of the function
+        - Async functions ALWAYS return promises
+        - No need for .then() or .catch()
+    - Await
+        - Inside an Async Function, we can use await
+        - await pauses execution 
+        - Can await ANY Promise or other async functions
+        - Await waits for promise to resolve & evaluates to its resolved value
+            - Kinda like having a .then() inside of the function or a pause button
+            - The awaits do NOT run until we have a value from the previous function
+        - WE MUST USE ASYNC WITH AWAIT!!!
