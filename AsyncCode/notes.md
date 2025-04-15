@@ -105,3 +105,29 @@
     - New Promise will resolve when every promise in array resolves, and will be rejected if any promise in the array is rejected
     - Basically like combining all of our calls into 1 promise
         - See Async.js for an example! 
+
+- Async Patterns: Promise All Settled
+    - Many Calls, In Sequence
+    - Very Similar to Promise.all(), however Promise.allSettled() resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise
+    - Will take an array of promises, and we will get our data back in a array of objects
+    - This will give us an array of promises even if some of the URLs or Promises are rejected
+        - See the all settled demo in Async.js for an example
+        - All Settled doesn't care what is filled vs what is rejected
+
+- Async Patterns: Promise Race()
+    - Gives us the ability to send out a bunch of async operations, then handle the first one we get back whether its filled or rejected
+    - Accepts an array of promises and returns a new promise
+    - This new promise will resolve or reject as soon as one promise in the array resolves or rejects
+    - It only cares about the first one back and will ONLY return the first Promise back!
+
+
+- Building Own Promises
+    - How do we create our own promise objects
+    - You can use Promise with the new keyword to make your own promises
+    - Syntax sucks
+    - Promise accepts a single function as an argument, lets call it fn
+        - fn accepts 2 functions as arguments, resolve and reject
+            - Pass resolve a value for the promise to resolve to that value 
+            - Pass reject for the promise to reject to that value 
+            - See Random Resolve to see a more detailed example
+

@@ -204,3 +204,89 @@ const getLotsOfCalls = async () => {
 }
 
 getLotsOfCalls()
+
+//Promise.allSettled() example using the Github API: 
+const allSettledDemo = async () => {
+    //Base Github API: 
+    const baseURL = "https://api.github.com"; 
+
+
+    try {
+        let elieP = fetch(`${baseURL}/users/elie`)
+        let joelP = fetch(`${baseURL}/users/joelburton`)
+        let badURL = fetch(`https://definitelynotawebsite.com`)
+        let coltP = fetch(`${baseURL}/users/colt`)
+        let anotherBadUrl = fetch("https://definitelynotawebsite.com")
+
+        //Promise.allSettled example will return us with the results in a array
+        let result = await Promise.allSettled(
+            [
+                elieP, 
+                joelP, 
+                badURL, 
+                coltP, 
+                anotherBadUrl
+            ]
+        )
+
+
+  
+//Filter out the Filled and Rejected promises, no need for a new array since filter will return our filtered array
+const passed = result.filter((promise)=> promise.status === "fulfilled")
+const failed = result.filter((promise)=> promise.status === "rejected")
+
+console.log(passed)
+console.log(failed)
+       
+    } catch (error) {
+        console.log("Error:", error)
+    }
+}
+
+allSettledDemo(); 
+
+
+//Promise Race() Example: Will return the first one back regardless of whether the promise is Fulfilled or Rejected: 
+const lotsOfFetchCallsRace = [
+    fetch(`${baseUrl}/1`), 
+    fetch(`${baseUrl}/2`), 
+    fetch(`${baseUrl}/3`), 
+    fetch(`${baseUrl}/4`), 
+    fetch(`${baseUrl}/5`), 
+    fetch(`https://nope.nope`), 
+    fetch(`${baseUrl}/7`), 
+]
+
+
+Promise.race(lotsOfFetchCallsRace)
+    .then((response)=> console.log("Race:", response))
+    .catch((error)=> console.log("Error:", error))
+
+
+//Building our own promises example: 
+
+//Make a new promise in wait
+//Make me a new promise and after a given duration resolve the promise
+//new Promise takes in a resolve or reject function and returns a promise
+const wait = (duration) =>{
+    const newPromise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve("this syntax is kinda shitty"); 
+        }, duration)
+    })
+    return newPromise
+}
+
+// const demo = async (params) => {
+//     console.log("Hello!!")
+//   const value =  await wait(1000)
+//     console.log("There!")
+//     console.log(value)
+// }
+
+// demo()
+
+//Can also call wait like this: 
+wait(2000).then((value)=> console.log(value))
+
+
