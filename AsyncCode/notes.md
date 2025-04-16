@@ -131,3 +131,6 @@
             - Pass reject for the promise to reject to that value 
             - See Random Resolve to see a more detailed example
 
+
+- Promising Node's FS File
+    - See NodeFS.js file for an example of making a promise from scratch to grab file info for files 1 through 3
