@@ -39,8 +39,8 @@ const showNumberAll = async (num) => {
     const responsePromises = num.map((number)=> fetch(`http://numbersapi.com/${number}/trivia?json`))
     const resultAll = await Promise.allSettled(responsePromises)
     
-const okResponses = resultAll.filter((r)=> console.log(r))
-console.log(okResponses)
+  const okResponses = resultAll.filter((r)=> console.log(r))
+  console.log(okResponses)
 }
 //Write a main function that will call all of these functions in order (custom promise) ONLY after the current function completes
 
