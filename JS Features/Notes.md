@@ -24,3 +24,18 @@
 - Logical Assignment
     - Logical Assignments are a combination of logical operators(&&, ||, ??) and assignment expressions
     - Put the equal sign after the logical assignment symbol
+
+- Promise.any()
+    - Promise.any() takes an iterable of Promise objects and returns a promise that is fulfilled by the first given promise to be fulfilled, or rejected if all of the given promises are rejected. 
+        - See Promise Any for an example
+    - Different from Promise.race() because this will resolve the 1st value no matter what regardless if it is resolved or rejected
+    - GIVES US THE PROMISE VALUE WHEN SOMETHING PASSES! WILL ONLY REJECT IF ALL PROMISES ARE REJECTED
+    - Can be used with async as well
+
+- Class fields (Public and Private)
+    - Public and private class fields provide a way to maintain instance-specific state on classes. 
+    - See this in app.js, same stuff in our work computer that we will need to bring over into VS code
+
+- Static Class Initialization Blocks
+    - This feature allows you to have a block of code that runs once when the class is defined, useful for setting up shared state or configurations for classes. 
+
