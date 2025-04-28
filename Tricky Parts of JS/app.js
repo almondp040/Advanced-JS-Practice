@@ -50,15 +50,20 @@ class Counter {
 
 nextBefore(){
     let countMe = ++this.count; 
-    console.log("++ is before:", countMe); 
-    return countMe; 
+    return `++ is before ${countMe}`; //return is our output of this function!
 }
 
 }
 
 const countTest = new Counter(); 
 countTest.nextAfter()
-countTest.nextBefore()
-countTest.nextBefore()
+console.log(countTest.nextBefore())
+//countTest.nextBefore()
 
+//Return reminder is just the output of the function: 
+const favNum = (num = 0)=>{
+return `My favorite number is: ${num}`; 
+}
 
+const runNum = favNum(6); 
+console.log(runNum); 
