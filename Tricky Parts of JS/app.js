@@ -1,3 +1,5 @@
+
+
 //Float Imprecision, JS does some funky stuff with decimals: 
 console.log(0.1 + 0.2) // equals 0.30000000000000004
 
@@ -67,3 +69,66 @@ return `My favorite number is: ${num}`;
 
 const runNum = favNum(6); 
 console.log(runNum); 
+
+//Generator Example: 
+//Write our genator first, then call it with next.()
+function* evens (n){
+    while (true) {
+        n +=2; 
+        yield n; 
+    }
+}
+
+
+
+//Each time we call the next() function this will return whatever our yield value is
+const evenGen =evens(8); // seems like a shorter way to write loops
+console.log(
+
+    evenGen.next(),
+    evenGen.next(),
+    evenGen.next(),
+    evenGen.next(),
+    evenGen.next(),
+    evenGen.next()
+
+); 
+
+//Literally just putting a star and using yield instead of return, kinda like a new way to write a function that returns a specific value each time: 
+//Really useful for repeatable functions that iterate
+//Or if we need a function to spit out an object
+//Once done the last object will return undefined and done will be set to true
+const cats = function* () {
+
+    yield "Blue"; 
+    yield "Kitty"; 
+    yield "Cream"; 
+    yield "Creedence"; 
+
+    //Insert my loop: Loop is required, we're basically packing up a loop that way we only need to write it once 
+    // while (true) {
+    //     console.log(n)
+    //     n +=1; 
+    //     yield `Here are my ${n} cats`; 
+    //     yield `They are so awesome!`; 
+    // }
+
+};
+
+//Now we assign our objects to a variable:
+const callCats = cats(); 
+
+const Blue = callCats.next().value; 
+console.log(
+    `We love ${Blue}`
+    // callCats.next().value, 
+    // callCats.next(), 
+    // callCats.next(), 
+    // callCats.next(), 
+    // callCats.next(), 
+ 
+)
+
+
+//fibonacci example: 
+

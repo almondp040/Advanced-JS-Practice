@@ -31,3 +31,15 @@
         - You can write JS with or without semicolons; if you omit them, they will be inserted by JS in a process known as ASI: Automatic Semicolon Insertion. 
             - Try to ALWAYS put in semicolons
             - Line breaks matter so always try to put semicolons at the end of each code block
+
+
+    - JS Generator Functions and Yield
+        - JS can have generator functions which are functions that return a Generator that can be looped over: 
+        - Basically functions that allow us to pause the excution of the function, then resume it after a specific value 
+        - Then we can use .next() on the function to acquire our object!
+        - Able to run some code that gives me a another value after it gets called
+            - See app.js for an example!
+
+    -  When are generators useful? 
+        - When you have a large batch of a resource, and you wanna break it down AKA PAGINATION
+            - See getBatchOfItem for an example!
