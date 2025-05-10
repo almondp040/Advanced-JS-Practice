@@ -43,3 +43,10 @@
     -  When are generators useful? 
         - When you have a large batch of a resource, and you wanna break it down AKA PAGINATION
             - See getBatchOfItem for an example!
+
+    - The Incredibly Versitile Array.from() Method
+        - Helps us with generating new arrays from non arrays, kinda like a shortcut to make arrays 
+        - Allows us to make arrays easier by putting data into Array.from
+        - we can pass in a mapping option to add map at the same time the array is made
+        - useful for generating arrays with a certain length, possible useful for generating data
+        - Essentially making a array of a particular length with a mapping function

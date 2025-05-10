@@ -1,4 +1,4 @@
-
+import Name from "./ArrayFrom.js";
 
 //Float Imprecision, JS does some funky stuff with decimals: 
 console.log(0.1 + 0.2) // equals 0.30000000000000004
@@ -131,4 +131,11 @@ console.log(
 
 
 //fibonacci example: 
+
+const heyJimmy = new Name("Jimmy", 30); 
+
+console.log(heyJimmy.greeting())
+
+
+
 
