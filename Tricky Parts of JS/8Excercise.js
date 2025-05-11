@@ -18,7 +18,7 @@ const parseAndCheck = (value = []) =>{
         }
     }); 
 
-console.log(parseResults); 
+//console.log(parseResults); 
 return parseResults;
 
    
@@ -45,8 +45,26 @@ const changed = array.map((nums, index)=>{
 
 })
 
-    console.log("Changed Array:", changed); 
+    //console.log("Changed Array:", changed); 
 
 }
 
 decrementArrayElements([]); 
+
+//Range Generator Practice: 
+//Takes in numbers and gives me a range between these numbers
+function *rangeGenerator(start, end) {
+    //Start is less than end: 
+    if (start <= end) {
+        for (let i = start; start <= end; yield i++) {
+            yield i; 
+        }; 
+
+    } else {
+         for (let i = start; start >= end; i--) {
+       yield i; 
+    }
+    }
+
+}; 
+
