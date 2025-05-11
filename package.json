@@ -2,6 +2,7 @@
   "name": "advanced-js-course",
   "version": "1.0.0",
   "description": "practicing and learning JS",
+  "type": "module",
   "main": "intro.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

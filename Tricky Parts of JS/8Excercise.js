@@ -34,13 +34,19 @@ parseAndCheck(nums);
 
 const decrementArrayElements = (array = []) => {
 
+    //check if the array is empty or not, next step
 const changed = array.map((nums, index)=>{
-    nums--; 
-    return nums; 
+    if (index > -1) {
+        nums--; 
+        return nums;
+    } else {
+        return "Empty Array"; 
+    }
+
 })
 
     console.log("Changed Array:", changed); 
 
 }
 
-decrementArrayElements([1,2,3,5])
+decrementArrayElements([]); 
