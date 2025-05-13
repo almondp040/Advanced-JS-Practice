@@ -45,3 +45,7 @@
     - Allows us to create essentially private variables!
     - Forces people to actually use the function, and does not allow us to access the count variable, useful to protect variables
 
+- Closures Factory Functions
+    - Making functions out of functions, which returns certain items 
+    - Think of promise chaining but just with functions. 
+        - See the Unique ID function
