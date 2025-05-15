@@ -49,3 +49,8 @@
     - Making functions out of functions, which returns certain items 
     - Think of promise chaining but just with functions. 
         - See the Unique ID function
+
+- Closures Loops
+    - Loops do not create their own scope and everything would be global
+    - Essentially we would need to create a new scope inside of the loop, IF we do not use let. 
+    - with let the index will be scoped via the loop so other functions inside of the loop can use the index

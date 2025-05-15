@@ -151,3 +151,11 @@ function main() {
 
 main(); 
 
+//Closures with loops and things that are not functions:
+//With Let this allows us use the index
+for (let index = 1; index < 6; index++) {
+    setTimeout(()=>{
+    console.log("Index is: ", index); 
+}, 1000 * index); 
+    
+}
