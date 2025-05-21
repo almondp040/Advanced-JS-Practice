@@ -36,7 +36,6 @@ const account = {
             const script = `Invalid Pin!`; 
             return script; 
         } else if(pinCodeCheck === pinCode){
-
             if(withdrawAmount > initialDeposit){
                 const script = `Withdrawal amount exceeds account balance. Transaction cancelled.`; 
                 return script; 
@@ -46,9 +45,7 @@ const account = {
                             const script = `Successfully withdrew ${withdrawAmount}. Current balance: ${newBalance}`; 
                             return script; 
             }
-
         }
-
     }, 
     changePin(oldPin, newPin){
         if(oldPin !== pinCode){
