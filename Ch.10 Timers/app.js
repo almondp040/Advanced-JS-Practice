@@ -76,3 +76,7 @@ searchInput.addEventListener("input", ()=>{
     }, 1000);
     
 })
+
+
+
+
