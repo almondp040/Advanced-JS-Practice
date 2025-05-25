@@ -58,7 +58,7 @@ const account = {
                 return script; 
         }
     }
-}
+};
 //console.log(account)
 return account; 
 }; 

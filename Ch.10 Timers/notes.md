@@ -25,3 +25,7 @@
     - We are essentially putting a pause while using our setTimeout
     - Super important for FE development
     - Soon as the event is triggered we will clear the timeout and then run the code again
+
+
+    - Writing a fancy debouncing function: 
+        - 
