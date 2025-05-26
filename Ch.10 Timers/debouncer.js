@@ -1,5 +1,5 @@
 //Fancy Debouncer function: Useful for pulling info from APIs!
-console.log("Live from the debouncer file!!"); 
+console.log("Live from the debouncer file!! "); 
 
 //Mock API hit, replacable with a actual api call
 const queryAPI = (searchTerm) =>{
