@@ -40,3 +40,25 @@
     - Basically using functions as arguments or parameters
     - JS treats functions as any other variable
 
+- Pure Functions
+    - Pure Functions are deterministic
+    - Referential Transparency
+        - The function always gives the same return value for the same arguments
+        - The function should only depend on its input argument
+    - Side-effect free: 
+        - The function should not cause any side effects
+        - Side effects may include modifying a mutable object, reassigning a variable etc. 
+
+- Returning Functions
+    - Higher Order Functions:
+        - Is a function that receives another function as an argument, returns a function, or does both
+
+- Immutability (use the spread operator to make copies of arrays and objects, then use those copies)
+    - The idea that once a piece of data is created, it cannot be changed
+    - We try not to modify the original form of the data
+    - Usually leads to writing functions to copy arrays and objects
+        - Can also use Object.freeze to handle this as well
+
+- Recursion (Watch a video on this tbh)
+    - When a function calls itself in order to solve a problem, which allows the function to be called multiple times without using a loop
+    - Might wanna watch a yt video on it for more knowledge
