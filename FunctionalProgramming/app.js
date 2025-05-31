@@ -127,3 +127,110 @@ function factorial(number) {
 console.log(
     factorial(2)
 )
+
+
+//Partial Application with Bind: 
+function greetAgain(greeting, name) {
+    console.log(`${greeting}, ${name}`); 
+}
+
+//Just baking in the greeting, but we still have to add our name to the function
+//This will have the greet function and arguments baked into the aussieGreet
+const aussieGreet = greetAgain.bind(null, "G'Day"); 
+
+//So now when we call aussieGreet this will set our greeting to G'Day and all we have to provide is the name
+aussieGreet("Elton"); 
+
+//Able to pass in more arguments if i need to. Essentially we are building on top of an existing function
+const spitefulGreet = greetAgain.bind(null, "I hate you")
+
+spitefulGreet("Tom Brady"); 
+
+//How to build a partial function from scratch: 
+function multiplyPartial(a, b) {
+    return a*b; 
+}
+
+//With this partial we can take in multiple arguments at once, and these arguments have to be in order. 
+//We can bake in arguments like a URL or a API key for example
+function partial(func, ...fixedArgs) {
+    return function (...remainingArgs) {
+        return func(...fixedArgs, ...remainingArgs) 
+    }
+}
+
+const doublePartial = partial(multiplyPartial, 2); 
+const triplePartial = partial(multiplyPartial, 3)
+
+console.log(
+
+    doublePartial(10), 
+    triplePartial(30)
+
+
+)
+
+//Calculate Tax example using a partial function: 
+//We use the calculate tax, and with partial we can essentially copy this function, pass in a set tax rate, then run our calculate function with a given amount
+
+function calculateTax(rate, amount) {
+    total = rate * amount; 
+    const rounded = total.toFixed(2); 
+    return Number(rounded); 
+}; 
+const calculateCASalesTax = partial(calculateTax, .07); 
+const calculateNJSalesTax = partial(calculateTax, .06);
+console.log(
+    calculateCASalesTax(1000),
+    calculateNJSalesTax(1000)
+); 
+
+//Composition is combining multiple functions to build a more complicated function
+const add = (a, b) =>{
+    return a+b; 
+}
+
+const squareComp = (a)=>{
+    return a*a; 
+}
+
+//Using multiple functions at once to get 1 result: 
+//Having 1 function do the heavy lifting as the other function runs the result
+const test = add(squareComp(3), squareComp(6)); // 9 + 36 = 45
+const test2 = squareComp(add(4,3)); // 4+3 = 7 then 7*7 = 49
+
+//Now we can make a 3rd function that will combine everything together: 
+//addAndSquare uses square and add 
+const addAndSquare = (a,b) =>{
+  return  square(add(a,b)); 
+}
+
+const test3 = addAndSquare(4, 4); 
+console.log(test, test2, test3)
+
+//A simple compose function that we can use for other stuff: 
+//Expects 2 functions that takes in 2 functions that returns a function with a value, then will run function2 with function1 inside of it with a value
+//ANYTIME WE ARE RETURNING A FUNCTION WE MUST SAVE IT TO A OBJ THEN RUN THAT OBJ
+function compose(fn1, fn2) {
+    return function (value) {
+        return fn2(fn1(value)); 
+    }
+}; 
+
+function repeatTwice(string) {
+    return string.repeat(2); 
+}; 
+
+function upperCase(string) {
+    return string.toUpperCase(); 
+}; 
+
+const repeatAndUppercase = compose(repeatTwice, upperCase); 
+const myThoughts = repeatAndUppercase("Idk about functional programming"); 
+
+const squareAgain = (a) => a*a; 
+const doubleAgain = (a) => a *2; 
+
+const doubleAndTriple = compose(squareAgain, doubleAgain)
+const run = doubleAndTriple(4)
+console.log(myThoughts, run)

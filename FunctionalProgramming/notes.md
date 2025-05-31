@@ -62,3 +62,20 @@
 - Recursion (Watch a video on this tbh)
     - When a function calls itself in order to solve a problem, which allows the function to be called multiple times without using a loop
     - Might wanna watch a yt video on it for more knowledge
+
+- Partial Application with Bind
+    - Process of executing a function with some or all of its arguments. The partially applied function then gets returned for later use
+    - Basically the idea of making a function that returns the rest of the arguments
+    - Supplying some arguments to a function, then using a function with those arguments
+    - Essentially we are building on top of an existing function
+    - We can also make partial function from scratch
+
+- Composition
+    - Function composition is a mechanism of combining multiple functions to build a more complicated one
+    - Basically combining functions
+    - The result of each function is passed to the next one
+
+- How to write functions for composition
+    - When composing functions together, it's often best to not use methods, but instead create independent functions with a minimal number of arguments
+
+
