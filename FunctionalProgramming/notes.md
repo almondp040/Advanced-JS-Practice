@@ -1,5 +1,7 @@
 # Functional Programming
 
+    - CAN USE A FP Library for this! Called Ramda
+
 - Functional Programming
     - A new way of thinking about code and structuring/organizing our code
     - The Process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects. 
