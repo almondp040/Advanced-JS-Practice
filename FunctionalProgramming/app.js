@@ -234,3 +234,88 @@ const doubleAgain = (a) => a *2;
 const doubleAndTriple = compose(squareAgain, doubleAgain)
 const run = doubleAndTriple(4)
 console.log(myThoughts, run)
+
+//Fancy Compose Function: 
+//Takes in a array of functions then returns a new function via reduce right that takes in the data
+function fancyCompose(...functions) {
+    return function (data) {
+      return functions.reduceRight(
+            (val, func)=>func(val), data
+        
+        )
+    }; 
+}; 
+
+//See example: 
+function lowerCase(string) {
+    return string.toLowerCase(); 
+}
+
+function splitWords(string) {
+    return string.split(" "); 
+}
+
+function joinWithDash(array){
+    return array.join("-"); 
+}
+
+function replaceS(string) {
+    return string.replaceAll("s", "$"); 
+}
+
+//Starts from right to left, therefore we need joinWith to go first: 
+//Can also make a class / object with methods that can do this as well
+//Reduce takes multiple values from an array and reduces it to one
+//This will work with any number of functions!
+const newCompose = fancyCompose(joinWithDash, splitWords, lowerCase, replaceS); 
+console.log(newCompose("I HAT OKRA AND VFE also the s should change")); 
+
+
+
+//Currying Example:
+
+//Regular Function: 
+function addRegular(a, b, c) {
+    return a+b+c; 
+}; 
+
+//Currying Function: CAN ALSO JUST USE A FUNCTIONAL PROGRAMMING LIBRARY!!!
+//Defining multiple functions inside of a function then combining all of the arguments together
+function addCurryExample(a) {
+    return function (b) {
+        return function (c) {
+            return a+b+c
+        }
+    }
+}
+
+const fifteenExample =addCurryExample(5)(5)(5); 
+
+console.log(fifteenExample)
+
+//Fancy Version of Currying
+function add3(x,y,z) {
+    return x+y+z; 
+}
+
+function curry(fn) {
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn.apply(this, args); 
+        } else {
+            return function (...args2) {
+                return curried.apply(this, args.concat(args2)); 
+            }
+        }
+    }; 
+}; 
+
+const curriedAdd = curry(add3); 
+
+//Gives us the ability to call things in multiple ways, makes our functions extremely flexible: 
+//Can use with 1 or 2 or all 3 arguments: 
+console.log(
+    curriedAdd(3,4,5),
+    curriedAdd(3)(4)(5)
+
+)

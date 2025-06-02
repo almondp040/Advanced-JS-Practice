@@ -79,5 +79,12 @@
 
 - How to write functions for composition
     - When composing functions together, it's often best to not use methods, but instead create independent functions with a minimal number of arguments
+    - Fancy composition is in app.js
 
+
+- Currying: could also use a FP library as well
+    - a curried function can be called with any number of arguments - if you call it with fewer arguments than it takes, it returns a "smaller" partial, which you can then call with remaining arguments
+    - Basically evaluating functions that takes a argument one at a time
+    - Writing functions that take in a function with a parameter one at a time
+    - Came up more in interviews and less in the real world fyi
 
