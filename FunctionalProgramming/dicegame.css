@@ -1,0 +1,39 @@
+body{
+margin: 0;
+place-content: center;
+place-items: center;
+height: 100vh;
+font-family: 'Playfair Display';
+ background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover no-repeat;
+}
+
+.glass-container {
+
+  width: 100vh;
+  height: 100vh;
+  place-content: center;
+  place-items: center;
+}
+
+.button{
+   padding: 14px 28px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.705);
+  background: rgba(255, 255, 255, 0.301); /* Transparent */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Frosted glass */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover{
+      background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.statement{
+    font-family: 'Playfair Display', serif; 
+}
