@@ -88,3 +88,16 @@
     - Writing functions that take in a function with a parameter one at a time
     - Came up more in interviews and less in the real world fyi
 
+
+- JS Functional Libraries for use: 
+    - Ramda
+    - lodash/fp
+
+- OOP vs FP
+    - Usually people go with one or the other
+    - OOP is often easier to reason about and read
+    - FP has a much steeper learning curve, but can allow for functions to be simplified and easily composed. 
+        - Kinda like a box of lego bricks with functions
+    
+
+
