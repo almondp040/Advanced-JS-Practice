@@ -12,3 +12,10 @@
 - Get Request with Custom Headers
     - How to send custom headers with our request!
     - Use the new Headers constructor so its easier for use and it standardizes the header info we are sending
+
+- POST Requests with Fetch
+    - we can use a {} after our fetch url to specify the type of request we are looking to use and add any headers we need
+    - to send data we will pass our payload through body: JSON.stringify(payload)
+
+- Using Fetch to upload a file:
+    

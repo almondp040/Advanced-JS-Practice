@@ -43,6 +43,57 @@ async fetchDataWithHeaders () {
     }
 }
 
+async post(payload) {
+
+
+    try {
+        //Hitting our api via a post method, with headers and we will need to change our body to JSON.  
+        const response = await fetch(this.urlWithID, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(payload)
+        }); 
+
+        if (response.ok) {
+            const data = await response.json(); 
+            console.log(data); 
+        }
+    } catch (error) {
+        console.log("Error:", error); 
+    }
+}
+
+
+async uploadFile(file){
+
+    const formData = new FormData(); 
+    formData.append("fileName", file); 
+
+    try {
+        const response = await fetch(this.urlWithID, {
+            //POST NEEDS A BODY TO SEND
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: formData
+        }); 
+
+        const data = response.json(); 
+        console.log(data); 
+
+
+
+
+    } catch (error) {
+        console.log("Error", error); 
+    }
+
+
+}
+
   }; 
 
 
@@ -50,3 +101,19 @@ async fetchDataWithHeaders () {
 const pokemon = new apiGet("https://pokeapi.co/api/v2/pokemon/", 45); 
 
 const pokeFetch = pokemon.fetchData(); 
+
+const payloadToSend = {
+    key1: "value", 
+    key2: "value2"
+}
+const pokePost = pokemon.post(payloadToSend); 
+
+
+const fileInput = document.getElementById("file-input"); 
+
+fileInput.addEventListener("change", (event)=>{
+    const formData = new FormData(); 
+    formData.append("fileName", fileInput.files[0]); 
+    const getForm = pokemon.uploadFile(formData); 
+    console.log(getForm); 
+})
