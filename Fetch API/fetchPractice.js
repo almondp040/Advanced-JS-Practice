@@ -44,10 +44,8 @@ const createPost = async (url, userID, ID, title, body, postTitleID, postParaID)
             console.log(response)
             const newPostData = await response.json()
             console.log(newPostData);
-
             const postTitle = document.getElementById(postTitleID); 
             const postPara = document.getElementById(postParaID); 
-
             postTitle.innerText = newPostData.title; 
             postPara.innerText = newPostData.body; 
     } catch (error) {
