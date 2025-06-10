@@ -1,7 +1,4 @@
 //Darkmode Demo: 
-
-
-
 const button = document.getElementById("toggle"); 
 
 const toggleTheme = () =>{
