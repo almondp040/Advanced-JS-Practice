@@ -28,3 +28,6 @@ const saveNumsViaJSON = localStorage.setItem('nums',  numsJSON);
 const getNumsViaJSON = localStorage.getItem('nums'); 
 const convert = JSON.parse(getNumsViaJSON) //turns this back into a array, use json.parse to turn it into a object or an array
 console.log(convert) // now its a array via the console
+
+//Session Storage: 
+sessionStorage.setItem("color", "teal"); // this will set this piece of data for a particular item in the tab, but once they switch tabs this will not be apart of the sessionStorage

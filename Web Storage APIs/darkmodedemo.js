@@ -19,7 +19,10 @@ const applyTheme = ()=>{
     if (theme === "dark") {
         document.body.classList.add("dark-mode"); 
          button.textContent = "Enable Light Mode"; 
-    } 
+    } else {
+        document.body.classList.remove("dark-mode"); 
+        button.textContent = "Enable Dark Mode"; 
+    }
 
 
 }
@@ -29,3 +32,12 @@ applyTheme();
 button.addEventListener("click", ()=>{
     toggleTheme(); 
 })
+
+//Use this to sync the DOM with the changes coming from local storage
+window.addEventListener("storage", (event) => {
+    console.log(event); 
+    if (event.key === "theme") {
+        applyTheme(); 
+    }
+});
+

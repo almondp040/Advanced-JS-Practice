@@ -22,3 +22,14 @@
         - Can maybe use this with forms?
         - Shopping cart data is an extremely common use case
         - analytics and ad tracking as well is extremely common
+
+- Sync Tabs with Local Storage
+    - We should look to keep our tabs in sync
+    - We should use a storage event via the window.addEventListener 
+        - Will need to open a new tab to see the storage event
+
+- Session Storage
+    - Allows web applications to store key-value pairs ina web browser for a single session
+    - As long as the tab stays the same or the browser is open this will keep our data, session storage is tied to the particular user's session
+    - API is extremely similar to localStorage
+    - We might use this more with Forms, since forms are generally tied to a single session and not shared across tabs
