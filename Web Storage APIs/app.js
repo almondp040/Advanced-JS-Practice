@@ -31,3 +31,8 @@ console.log(convert) // now its a array via the console
 
 //Session Storage: 
 sessionStorage.setItem("color", "teal"); // this will set this piece of data for a particular item in the tab, but once they switch tabs this will not be apart of the sessionStorage
+
+
+//Indexed DB Example, basically a massive session database, quite complicated process to use
+
+const open = indexedDB.open("MyFirstDB", 1); 

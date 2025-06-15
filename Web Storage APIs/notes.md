@@ -33,3 +33,10 @@
     - As long as the tab stays the same or the browser is open this will keep our data, session storage is tied to the particular user's session
     - API is extremely similar to localStorage
     - We might use this more with Forms, since forms are generally tied to a single session and not shared across tabs
+
+- IndexedDB (CAN ALSO USE A LIBRARY SO WE CAN USE ASYNC / AWAIT)
+    - A low level API for storing structured data, including large datasets! 
+    - Essentially like a serverside database, and is transactional, we can store keys, and store TONs of information
+    - Also supports versioned schemas
+    - Is Async and it does not support promises, or async/await 
+    - Quite similar to a SQL DB where we need to make a data store first, then put data in it. 
