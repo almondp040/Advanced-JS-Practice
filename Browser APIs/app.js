@@ -63,4 +63,26 @@ try {
 }
 }
 
-mediaDevices()
+mediaDevices(); 
+
+
+//Intersection Observer API: 
+//Automatically pass in a list of entries in an array
+//Set up our observer
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting === true) {
+            const percentage = Math.round(entry.intersectionRatio *100, 2)
+            console.log("AD IS SHOWING!!!", entry); 
+            console.log("Percentage showing is:", percentage)
+        } else {
+            console.log("AD IS NOT VISIBILE"); 
+        }
+    }); 
+    //Threshold: How much of the ad is visible before our function runs. Works like a fraction
+}, {threshold: [0, 0.5, 0.75, 1]}); 
+
+//Select the element we would like to observe: 
+const ad = document.querySelector(".ad"); 
+//We will see this in the console once we are able to view it: 
+observer.observe(ad); 
