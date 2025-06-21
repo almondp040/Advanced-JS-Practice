@@ -86,3 +86,52 @@ const observer = new IntersectionObserver((entries)=>{
 const ad = document.querySelector(".ad"); 
 //We will see this in the console once we are able to view it: 
 observer.observe(ad); 
+
+//Another Example looking at how long in milliseconds the ad was viewed: 
+//Works for a single ad
+let adViewTimes = []; 
+let adVisibleStartTime; 
+
+const observer2 = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        const {isIntersecting} = entry; 
+        if (isIntersecting) {
+            //ad is visible
+            adVisibleStartTime = Date.now()
+        } else if (adVisibleStartTime) {
+            //ad has been visible, no longer is visible
+            let adViewDuration = Date.now() - adVisibleStartTime; 
+            adViewTimes.push(adViewDuration); 
+            console.log(`Ad was viewed for ${adViewDuration} ms`); 
+            adVisibleStartTime = undefined; 
+        }
+    })
+}, {threshold: 0.5}); 
+
+observer2.observe(ad); 
+
+//Example using multiple ads: 
+//Shows which is visible based on the div ID: 
+//Also Lazy Loading: can expand this to images or anything on the DOM: 
+const observer3 = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+
+        const {isIntersecting} = entry; 
+        console.log(entry)
+        const {id} = entry.target; 
+
+        if (isIntersecting) {
+            console.log(`${id} ad is visible!`); 
+        } else {
+            console.log(`${id} ad is NOT visible`); 
+        }
+
+
+    })
+}, {threshold: 0.5}); 
+
+const allAds = document.querySelectorAll("div"); 
+
+allAds.forEach((ad)=>{
+    observer3.observe(ad); 
+});

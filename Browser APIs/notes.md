@@ -26,4 +26,7 @@
         - How much should the ad show before our function runs??
         - we can also give threshold an array of values to run things when the element passes the threshold 
             - can do 0, 0.5, or 1
+        - We can use entry.target with the ID to have actions run based of the element ID from the HTML page
+    - Can help alot with LazyLoading, where the photo will load once the others are in view
+    - use entry.IsIntersecting for the if condition check
 
