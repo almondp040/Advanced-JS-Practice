@@ -7,3 +7,9 @@
 
 - Canvas Basics
     - See Canvas API File!
+
+- Canvas Arcs and Paths
+        - With the method called arc(), we can draw arcs as well, that takes a few parameters 
+        - We can also store a reference via the Path2D object
+
+- Other Canvas Features can be found on MDN
