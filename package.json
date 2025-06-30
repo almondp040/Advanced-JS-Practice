@@ -1,6 +1,6 @@
 {
   "name": "advanced-js-course",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "practicing and learning JS",
   "type": "module",
   "main": "intro.js",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/almondp040/Advanced-JS-Practice/issues"
   },
-  "homepage": "https://github.com/almondp040/Advanced-JS-Practice#readme"
+  "homepage": "https://github.com/almondp040/Advanced-JS-Practice#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

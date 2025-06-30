@@ -31,8 +31,24 @@ class Ball {
     }
 
     update(){
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+        //Check if its about to hit the canvas boundary
+        if ((this.x + this.size ) >= canvas.width || (this.x - this.size) <= 0) {
+            
+            this.xVelocity = -this.xVelocity; 
+
+        } 
+        
+        if ((this.y + this.size ) >= canvas.height || (this.y - this.size) <= 0) {
+            this.yVelocity = -this.yVelocity;
+        }
+
+        this.x += this.xVelocity;
+        this.y += this.yVelocity; 
+
+        if ((this.y + this.size) < canvas.height) {
+            this.yVelocity += .2; //This is our gravity
+        }
+
     }
 }
 
