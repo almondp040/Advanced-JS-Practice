@@ -6,3 +6,5 @@
         - Super useful for live information data, Crypto, Stocks, Online Gaming, Chat Apps etc. 
         - A bi-directional tunnel of communication
             - Like a phone call that doesn't hang up
+        - We can use a library for this called Express Websockets, or make it from scratch with new WebSocket(webSocketURL)
+        Then it has a few events .onopen, onmessage, onerror, onclose then a function
