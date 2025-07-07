@@ -66,3 +66,5 @@ const square = new Square(3);
 //This way we can make new shapes, while keeping Area Calculator the same!
 console.log(AreaCalculator.calculate(circle)); 
 AreaCalculator.calculate(square); 
+
+//Liskov Substitution Principle

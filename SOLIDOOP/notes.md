@@ -12,3 +12,6 @@
     - Software entities should be open for extension but closed for modification. This means that the behavior of a module can be extended without modifying its source code. 
     - We should be able to extend functionality without modifying the original class
 
+- Liskov Substitution Principle
+    - Objects of a superclass should be able to be replaced with objects of a subclass without affecting the correctness of the program. 
+
