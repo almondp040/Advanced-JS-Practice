@@ -191,9 +191,95 @@ const chickenRegistry = new ChickenRegistry();
 const addChicken1 = chickenRegistry.addChicken(chicken1); 
 chickenRegistry.getChicken(1); 
 
+//Mixin Pattern
+//Mixing in our objects methods to our classes!
+const fly = {
+    fly(){
+        return `${this.name} flys!!!`
+    }, 
+
+    land(){
+        return `${this.name} , the ${this.species} has returned to earth!`; 
+    }
+}
+
+const swim = {
+    swim(){
+        return `${this.name} can swim!!`
+    }
+}
+//Now some of our animals can swim or fly but we do not want to bake that into the original class
+class Animal {
+    constructor(name, species) {
+        this.name = name; 
+        this.species = species; 
+    }
+
+    greet(){
+        console.log(`${this.name} says Hi!`); 
+    }
+}
+
+const bernie = new Animal("Bernie", "Pelican"); 
+Object.assign(bernie, fly); //This is where we are mixing in functionality from the fly object and methods
+Object.assign(bernie, swim)
+
+//Proxy Patttern
+//We can have a proxy object to interact with the cat object
+const cat = {
+    name: "Blue Steel",
+    age: 7, 
+    breed: "Scottish Fold"
+}; 
+
+//Uses a set of proxy methods (Check MDN for details)
+//Now every time we attempt to get information from the cat object we will return the string LOL 
+//This sits in the middle of cat and the proxy and will return LOL each time we attempt to access the property
+const handler = {
+    get: function (object, property) {
+        console.log(`Assessing ${property} from object`); 
+        return object[property]
+    }, 
+
+    //Example if the property = age we will make sure the value is greater than 0
+    set: function(object, property, value){
+        if (property === "age") {
+
+            if (value < 0) {
+                object[property] = 0
+                throw new Error("Age must be greater than 0!");
+            } else {
+                object[property] = value; 
+            }
+        }
+    }
+}
+
+//We can use this proxy object to govern and control how we interact with this object! 
+const catProxy = new Proxy(cat, handler); 
 
 
+//Proxy Pattern with Functions: 
+function multiply(a, b) {
+    console.log(a*b);  
+}
 
+function sum(a, b){
+    console.log(a+b); 
+}
 
+//Basically adding in some logging around which function is running
+const handler2 = {
+    //This will run whenever a function is ran
+    apply: function(targetFunc, thisArg, argsList){
+            console.log("You ran the function!!"); 
+            console.log("args are: ", argsList)
+            targetFunc(...argsList);
+    }
+}
 
+const funcProxy = new Proxy(multiply, handler2); 
+const sumProxy = new Proxy(sum, handler2); 
 
+funcProxy(7,3); 
+sumProxy(7, 3); 

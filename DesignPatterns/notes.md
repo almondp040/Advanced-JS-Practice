@@ -23,3 +23,13 @@
     - Idea is that we have a centralized manager or a database of our objects and from there we can use the data how we want 
     - It acts like a central place to manage the objects, and it is particularly useful when you want to access the instances from different parts of your application without needing to pass them around as parameters.
     - Major risk is having a single point of failure
+
+- Mixin Pattern
+    - When we mix in our object methods to our class, that we can selectively mix in to our class
+
+
+- Proxy Pattern
+    - We have access to a object called Proxy in JS, which creates proxy objects that gives us more control on how we interact with other objects
+    - We can proxy functions as well
+    - This can be useful for validation or function logging and debugging purposes!
+    - Basically we are running a function in the middle before the function runs! 
